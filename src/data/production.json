@@ -1,0 +1,62 @@
+[
+  {
+    "img":"src/assets/images/pr1.jpg",
+    "con":"【茅台特卖】53°茅台王子500ml（6瓶装)+52°习牌特曲丙申年纪念版 500ml（双瓶装）",
+    "red":"￥648.00",
+    "black":"￥645.00"
+  },
+  {
+    "img":"src/assets/images/pr2.jpg",
+    "con":"【大牌特卖】法国2016拉菲珍藏波尔多红葡萄酒750ml（6瓶装）",
+    "red":"￥199.00",
+    "black":""
+  },
+  {
+    "img":"src/assets/images/pr3.jpg",
+    "con":"【汾酒特卖】53°青花20汾酒500ml",
+    "red":"￥309.00",
+    "black":"￥668.00"
+  },
+  {
+    "img":"src/assets/images/pr4.jpg",
+    "con":"五粮液五福临门超值大礼包",
+    "red":"￥468.00",
+    "black":"￥644.00"
+  },
+  {
+    "img":"src/assets/images/pr5.jpg",
+    "con":"【大牌特卖】法国整箱红酒法国拉菲传奇波尔多2015红葡萄酒750ml（6瓶装）",
+    "red":"￥399.00",
+    "black":""
+  },
+  {
+  "img":"src/assets/images/pr6.jpg",
+  "con":"【汾酒特卖】53°杏花村汾酒金奖20陈酿475ml",
+  "red":"￥149.00",
+  "black":""
+},
+  {
+  "img":"src/assets/images/pr7.jpg",
+  "con":"【自营优选】52°酒鬼馥郁天成1L+52°酒鬼馥郁天成258ml",
+  "red":"￥289.00",
+  "black":"￥286.00"
+},
+  {
+  "img":"src/assets/images/pr8.jpg",
+  "con":"【大牌特卖】智利魅利缤纷葡萄酒6支套装",
+  "red":"￥189.00",
+  "black":""
+},
+  {
+  "img":"src/assets/images/pr9.jpg",
+  "con":"【汾酒特卖】53°杏花村汾酒黄盖玻璃汾475ml（3瓶装）",
+  "red":"￥58.00",
+  "black":"￥57.00"
+},
+  {
+  "img":"src/assets/images/pr10.jpg",
+  "con":"【茅台特卖】53°茅台王子500ml（6瓶装)+52°习牌特曲丙申年纪念版 500ml（双瓶装）",
+  "red":"￥329.00",
+  "black":"￥569.00"
+}
+]
