@@ -1,85 +1,83 @@
 <template>
-    <div class="cartWrap">
-        <MyHeader title="购物车" :class="{bc4:true}"></MyHeader>
-        <Empty></Empty>
-        <div class="like">
-            <div class="likeTop">
-                <span></span>
-                你可能喜欢
-                <span></span>
-            </div>
-            <div class="likeCon">
-                <cartBox v-for="item in cartlist"
-                         :pic="item.pic"
-                         :under="item.under"
-                         :price="item.price" :key="item.key">
-                </cartBox>
-            </div>
+    <div class="my_cart">
+        <div class="cart_header">
+            <myHeader title="购物车" :class="{ cartBg: true }"></myHeader>
         </div>
-        <div class="process"><span></span>以上根据您购物车已有商品推荐<span></span></div>
-        <div class="toTop"><i></i></div>
+
+        <div class="empty_wrap">
+            <div class="img_wrap">
+                <img :src="cartUrl" alt="" />
+            </div>
+            <p class="empty_title">您的购物车还没有商品</p>
+            <p class="empty_text">快去逛逛吧~</p>
+            <a class="go_home" @click="goHome">去首页</a>
+        </div>
+        
     </div>
 </template>
 
 <script>
-  import $ from 'jquery'
-  import MyHeader from '../components/myheader.vue'
-  import Empty from '../components/empty.vue'
-  import {getCartList} from '../api/api.js'
-  import cartBox from '../components/cartbox.vue'
-    export default {
-        name: "cart",
-        components:{
-            MyHeader,
-            Empty,
-            cartBox
+import myHeader from "../components/header/myHeader.vue";
+export default {
+    data() {
+        return {
+            cartUrl:require('../assets/images/tools/cart.jpg')
+        }
+    },
+    components: {
+        myHeader,
+    },
+    methods: {
+        goHome(){
+            this.$router.push({ path: "home" });
         },
-        data:function(){
-            return {
-              cartlist:[]
-            }
-        },
-        mounted:function () {
-          var cartArr = {};
-          var This = this;
-          getCartList(cartArr).then(function(res){
-            This.cartlist = res;
-            console.log(This.cartlist);
-          });
-          $(window).scroll(function () {
-            if ($(this).scrollTop() > 200) {
-              $(".toTop i").show();
-            }
-            else {
-              $(".toTop i").hide();
-            }
-          });
-          $(".toTop").click(function(){
-            $("html,body").animate({scrollTop:0},300);
-            return false;
-          })
-
-      }
-    }
+    },
+};
 </script>
 
 <style scoped>
-  .cartWrap{background-color: #F1F5F4;text-align: center;}
-  .like{width: 100%;margin-top: 30px;}
-  .like .likeTop{width: 100%;font-size: 16px;height: 40px;line-height: 40px;}
-  .like .likeTop span{width:37%;height: 1px;background-color: #ccc;
-      display: inline-block;vertical-align: middle;}
-  .likeCon{column-count: 2;column-gap: 5px;}
+.my_cart {
+    width:100%;
+    height:100%;
+    background-color: #f1f5f4;
+    text-align: center;
+}
+.empty_wrap {
+    width: 100%;
+    margin-top: 48px;
+    margin-bottom: 20px;
+}
+.img_wrap{
+    display: block;
+    padding:15px 0;
+}
+.img_wrap img {
+    width:60px;
+    height:60px;
+    margin:0 auto;
+}
+.empty_wrap p {
+    line-height: 30px;
+}
+.empty_wrap p.empty_title {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+}
+.empty_wrap p.empty_text {
+    font-size: 1.4rem;
+    color: #969a99;
+    margin-bottom: 15px;
+}
 
-  .process{margin-bottom: 64px;width: 100%;height: 80px;margin-top: 10px;}
-  .process span{width: 18%;vertical-align: middle;height: 1px;
-    background-color: #ccc;display: inline-block;margin: 0 1%;}
-
-  .toTop{width: 51px;height: 51px;position: fixed;bottom: 70px;
-    right: 12px;z-index: 100000;}
-  .toTop i{display: block;width: 100%;height: 100%;
-    background: url("../assets/images/jx-sprite.png") no-repeat -93px -2px;
-    background-size: 150px 55px;}
-
+.empty_wrap a {
+    font-size: 1.6rem;
+    color: #000;
+    text-decoration: none;
+}
+.empty_wrap a.go_home {
+    padding: 6px 20px;
+    background-color: #fff;
+}
 
 </style>
